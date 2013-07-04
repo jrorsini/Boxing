@@ -46,6 +46,9 @@ header{
 		width: 960px;
 		height: 40px;
 		margin: auto;
+		.mobile_device{
+			display: none;
+		}
 		ul{
 			li {
 				position: relative;	
@@ -193,9 +196,10 @@ header{
 			}
 			p{
 				margin:10px 5px 10px 115px;
-				font-family: @alegreya;
+				font-family: @orienta;
 				text-align: left;
-				font-size: 1.1em;
+				line-height: 18px;
+				font-size: 0.9em;
 			}
 			.see{
 				cursor: pointer;
@@ -250,7 +254,8 @@ header{
 			padding:0 10px;
 		}
 		p{
-			font-family: @alegreya;
+			font-family: @orienta;
+			font-size: 0.9em;
 			color: #fff;
 			padding: 10px;
 			line-height: 20px;
@@ -373,8 +378,9 @@ footer{
 					right: 0;
 				}
 				.error:before{
+					margin-left: 2px;
 					content: "\e807";
-					color: @orange;
+					color: #CC2127;
 					font-family: 'fontello';
 				}
 				.check:after{

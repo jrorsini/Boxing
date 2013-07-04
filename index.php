@@ -34,28 +34,36 @@ if (!empty($_POST)) {
 		<title>DEVEL</title>
 		<link rel="stylesheet" href="css/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
-		<script src="js/jquery.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>		<script src="js/jquery.js"></script>
 		<meta charset="utf-8">
 	</head>
 	<body>
 		<header>
 		<nav>
+		<ul class="web_device">
+			<li><a href="#">Boxing<em class="color_gold">Senior</em>.com</a></li>
+			<li><a href="#" class="border_gold">Boxeurs</a><span class="bg_gold"></span></li>
+			<li><a href="#" class="border_orange">Combats</a><span class="bg_orange"></span></li>
+			<li><a href="#" class="border_blue">Actualitées</a><span class="bg_blue"></span></li>
+			<li><a href="#" class="border_marron">Clubs</a><span class="bg_marron"></span></li>
+			<li><a href="#">Connexion<div class="arrow_down"></div></a></li>
+			<li><a href="#">Inscription</a></li>
+		</ul>
 		<ul class="mobile_device">
-		<li><a href="#">Boxing<em class="color_gold">Senior</em>.com</a></li>
-		<li><a href="#" class="border_gold">Boxeurs</a><span class="bg_gold"></span></li>
-		<li><a href="#" class="border_orange">Combats</a><span class="bg_orange"></span></li>
-		<li><a href="#" class="border_blue">Actualitées</a><span class="bg_blue"></span></li>
-		<li><a href="#" class="border_marron">Clubs</a><span class="bg_marron"></span></li>
-		<li><a href="#">Connexion<div class="arrow_down"></div></a></li>
-		<li><a href="#">Inscription</a></li>
+			<li><a href="#">Boxing<em class="color_gold">Senior</em>.com</a></li>
+			<li><a href="#" class="border_gold">Boxeurs</a><span class="bg_gold"></span></li>
+			<li><a href="#" class="border_orange">Combats</a><span class="bg_orange"></span></li>
+			<li><a href="#" class="border_blue">Actualitées</a><span class="bg_blue"></span></li>
+			<li><a href="#" class="border_marron">Clubs</a><span class="bg_marron"></span></li>
+			<li><a href="#">Connexion<div class="arrow_down"></div></a></li>
+			<li><a href="#">Inscription</a></li>
 		</ul>
 		</nav>
 		</header>
 		<div class="wrapper">
 			<div id="slider">
 				<ul class="bjqs">
-					<li><img src="img/slide1.png" title="Reviver les plus grand combat de l'époque"></li>
+					<li><img src="img/slide1.png" title="Reviver les plus grands combats"></li>
 					<li><img src="img/slide2.png" title="Suiver l'actulaité de la boxe"></li>
 					<li><img src="img/slide3.png" title="Rechercher un club en France"></li>
 				</ul>
@@ -98,7 +106,7 @@ if (!empty($_POST)) {
 		</div>
 		<footer>
 			<div class="footer_content">
-				<section>
+				<section class="">
 					<h2>BoxingSenior.com</h2>
 					<div class="website_structure">
 						<a href="#" class="color_gold">Boxeurs</a>
@@ -112,7 +120,7 @@ if (!empty($_POST)) {
 						<input type="submit" value="S'inscrire">
 					</form>
 				</section>
-				<section>
+				<section class="contact_form">
 					<h2>Contactez-nous</h2>
 					<form action="index.php" method="post">
 						<input type="email" name="email" id="email" value="<?php if (isset($nom)) {echo $nom;} ?>" placeholder="Votre Adresse mail">
@@ -124,7 +132,7 @@ if (!empty($_POST)) {
 						<input type="submit" value="Envoyer" id="envoyer">
 					</form>
 				</section>
-				<section>
+				<section class="footer_links">
 					<h2>Suivez-nous</h2>
 					<div id="social_links">
 						<div class="social_links social_links1">
