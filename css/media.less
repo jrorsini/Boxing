@@ -2,18 +2,76 @@
 	body{
 		width: 100%;
 		header{
-			width: 100%;
-			nav{
+			display: none;
+		}
+		.mobile_device{
+			display: block;
+			margin-bottom: 10px;
+			.mobil_header{
 				width: 100%;
+				height: 50px;
+				background: @black;
+				h1{
+					font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+					line-height: 50px;
+					font-size: 1.2em;
+					margin-left: 10px;
+					a{
+						text-decoration: none;
+						color: #fff;
+					}
+				}
+				.mobil_btn{
+					cursor: pointer;
+					width: 40px;
+					height: 40px;
+					display: block;
+					position: absolute;
+					right: 5px;
+					top: 5px;
+					color: #fff;
+					&:before{
+						content:"\e800";
+						font-size: 2.5em;
+						font-family:@fontello;
+					}
+				}
 			}
-			.web_device{
+			nav{
 				display: none;
+				width: 100%;
+				float: left;
+				margin-bottom: 10px;
+				ul{
+					margin: auto;
+					width: 100%;
+					float: left;
+					li{
+						width: 100%;
+						height: 45px;
+						a{
+							text-align: center;
+							font-family: @Alef;
+							float: left;
+							text-decoration: none;
+							color: #fff;
+							line-height: 45px;
+							width: 100%;
+							height: 45px;
+							font-size: 1.5em;
+						}
+					}
+				}
 			}
 		}
 		.wrapper{
 			width: 96%;
 			#slider{
-				margin:-10px 0 5px 0;
+				width: 100%;
+				height: 250px;
+				display: block;
+				float: left;
+				margin:0px 0 5px 0;
 				p.bjqs-caption{
 					background: rgba(7,7,7,0.5);
 					display:block;
@@ -46,14 +104,13 @@
 		footer{
 			float: left;
 			width: 100%;
-			height: 500px;
+			height: 320px;
 			.footer_content{
-				width: 100%;
-				float: left;
+				width: 96%;
 				section{
+					margin: 0px;
 					float: left;
-					width: 96%;
-					height: 250px;
+					width: 100%;
 					.website_structure{
 						display: none;
 					}
@@ -65,17 +122,19 @@
 						color: #fff;
 						text-align: center;
 						margin:8px 0px;
+						width: 100%;
 						font-weight: normal;
 						font-size: 1.5em;
 					}
-					input{
+					button,input{
 						.transition;
 						width: 100%;
-						height: 40px;
+						height: 50px;
+						margin: 0 auto;
 						padding: 0 0 0 10px;
 						color: #fff;
 						border: 1px solid @dark_blue;
-						margin: 0px 0px 10px 0px;
+						margin-bottom:10px;
 						font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 						background: @dark_blue;
 						font-size: 1.2em;
@@ -83,8 +142,8 @@
 							border: 1px solid @blue;
 						}
 					}
-					input[type="submit"]{
-						height: 40px;
+					button,input[type="submit"]{
+						height: 50px;
 						text-align: center;
 						font-family: @Alef;
 						padding: 0;
@@ -95,8 +154,52 @@
 						background: @blue;
 					}
 				}
+				.newsletter_form{
+					height: 180px;
+				}
 				.contact_form{
 					display: none;
+				}
+				.footer_links{
+					height: 110px;
+					#social_links{
+						.social_links{
+							.mask{
+								width: 40px;
+								height: 40px;
+								padding: 2px;
+								overflow: hidden;
+								position: absolute;
+								a{
+									text-decoration: none;
+									position: absolute;
+									left: 0px;
+									float: left;
+									display: block;
+									.transition;
+									&:hover{
+										margin-left:-48px;
+									}
+								}
+								a:before{
+									font-family: @icon;color: @dark_blue;font-size: 2.5em;margin-left: 3px;
+								}
+								a:after{
+									font-family: @icon;font-size: 2.5em;margin-left: 8px;
+								}
+							}
+							.maskf{left: 0px;top: 0px;}
+							.maskt{left: 75px;top: 0px;}
+							.masky{left: 150px;top: 0px;}
+							.maskv{left: 0px;top: 70px;}
+							.maski{left: 75px;top: 70px;}
+							.maskp{left: 150px;top: 70px;}
+							.maskr{display: none;}
+							.info_links{
+								display: none;
+							}
+						}
+					}
 				}
 			}
 		}

@@ -34,32 +34,49 @@ if (!empty($_POST)) {
 		<title>DEVEL</title>
 		<link rel="stylesheet" href="css/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>		<script src="js/jquery.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Orienta' rel='stylesheet' type='text/css'>
+		<script src="js/jquery.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 	</head>
 	<body>
 		<header>
 		<nav>
-		<ul class="web_device">
-			<li><a href="#">Boxing<em class="color_gold">Senior</em>.com</a></li>
-			<li><a href="#" class="border_gold">Boxeurs</a><span class="bg_gold"></span></li>
-			<li><a href="#" class="border_orange">Combats</a><span class="bg_orange"></span></li>
-			<li><a href="#" class="border_blue">Actualitées</a><span class="bg_blue"></span></li>
-			<li><a href="#" class="border_marron">Clubs</a><span class="bg_marron"></span></li>
-			<li><a href="#">Connexion<div class="arrow_down"></div></a></li>
-			<li><a href="#">Inscription</a></li>
-		</ul>
-		<ul class="mobile_device">
-			<li><a href="#">Boxing<em class="color_gold">Senior</em>.com</a></li>
-			<li><a href="#" class="border_gold">Boxeurs</a><span class="bg_gold"></span></li>
-			<li><a href="#" class="border_orange">Combats</a><span class="bg_orange"></span></li>
-			<li><a href="#" class="border_blue">Actualitées</a><span class="bg_blue"></span></li>
-			<li><a href="#" class="border_marron">Clubs</a><span class="bg_marron"></span></li>
-			<li><a href="#">Connexion<div class="arrow_down"></div></a></li>
-			<li><a href="#">Inscription</a></li>
-		</ul>
+			<ul class="web_device">
+				<li><a href="#">Boxing<em class="color_gold">Senior</em>.com</a></li>
+				<li><a href="#" class="border_gold">Boxeurs</a><span class="bg_gold"></span></li>
+				<li><a href="#" class="border_orange">Combats</a><span class="bg_orange"></span></li>
+				<li><a href="#" class="border_blue">Actualitées</a><span class="bg_blue"></span></li>
+				<li><a href="#" class="border_marron">Clubs</a><span class="bg_marron"></span></li>
+				<li>
+					<a href="#" id="connect">Connexion<div class="arrow_down"></div></a>
+					<div class="login">
+						<div class="arrow_up_border"><div class="arrow_up"></div></div>
+						<form action="">
+							<input type="text" placeholder="Votre pseudo">
+							<input type="password" placeholder="Votre mot de passe">
+							<input type="submit" value="Se connecter">
+						</form>
+					</div>
+				</li>
+				<li><a href="#">Inscription</a></li>
+			</ul>
 		</nav>
 		</header>
+		<div class="mobile_device">
+			<div class="mobil_header">
+				<h1><a href="#">Boxing<em class="color_gold">Senior</em>.com</a></h1>
+				<div class="mobil_btn"></div>
+			</div>
+			<nav>
+				<ul class="mobil_ul">
+					<li><a href="#" class="bg_gold">Boxeurs</a><span class="bg_gold"></span></li>
+					<li><a href="#" class="bg_orange">Combats</a><span class="bg_orange"></span></li>
+					<li><a href="#" class="bg_blue">Actualitées</a><span class="bg_blue"></span></li>
+					<li><a href="#" class="bg_marron">Clubs</a><span class="bg_marron"></span></li>
+				</ul>
+			</nav>
+		</div>
 		<div class="wrapper">
 			<div id="slider">
 				<ul class="bjqs">
@@ -106,7 +123,7 @@ if (!empty($_POST)) {
 		</div>
 		<footer>
 			<div class="footer_content">
-				<section class="">
+				<section class="newsletter_form">
 					<h2>BoxingSenior.com</h2>
 					<div class="website_structure">
 						<a href="#" class="color_gold">Boxeurs</a>
@@ -117,7 +134,7 @@ if (!empty($_POST)) {
 					<h3>Newsletter :</h3>
 					<form action="">
 						<input type="text" placeholder="Votre Adresse mail">				
-						<input type="submit" value="S'inscrire">
+						<button type="submit">S'inscrire</button>
 					</form>
 				</section>
 				<section class="contact_form">
@@ -129,7 +146,7 @@ if (!empty($_POST)) {
 						<div class="mask_form mask_form2"><span class="info_sujet error check"></span></div>
 						<textarea id="message" name="message" value="<?php if (isset($nom)) {echo $nom;} ?>" placeholder="Votre message..."></textarea>
 						<div class="mask_form mask_form3"><span class="info_message error check"></span></div>
-						<input type="submit" value="Envoyer" id="envoyer">
+						<button type="submit" id="envoyer">Envoyer</button>
 					</form>
 				</section>
 				<section class="footer_links">
@@ -254,6 +271,26 @@ if (!empty($_POST)) {
 			});
 		});
 		</script>
+		<script>
+			$(document).ready(function(){
+				$("#connect").click(function(){
+					if($(".login").is(":hidden")){
+						$(".login").fadeIn(200);
+					}else{
+						$(".login").fadeOut(200);
+					}
+				});
+
+				$(".mobil_btn").click(function(){
+					if($(".mobile_device nav").is(":hidden")){
+						$(".mobile_device nav").slideDown(200);
+					}else{
+						$(".mobile_device nav").slideUp(200);
+					}
+				});
+			});
+		</script>
+		<script src="js/lte-ie7.js"></script>
 		<script src="js/slider.js"></script>
 		<script src="js/secret-source.js"></script>
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

@@ -7,7 +7,6 @@ window.onload = function() {
 	}
 	var icons = {
 			'icon-user' : '&#x75;',
-			'icon-search' : '&#x6c;',
 			'icon-facebook' : '&#x66;',
 			'icon-twitter' : '&#x74;',
 			'icon-youtube' : '&#x79;',
@@ -19,8 +18,7 @@ window.onload = function() {
 			'icon-arrow-left' : '&#x3c;',
 			'icon-google-plus' : '&#x67;',
 			'icon-feed' : '&#x72;',
-			'icon-facebook-2' : '&#x73;',
-			'icon-feed-2' : '&#x78;'
+			'icon-menu' : '&#x6f;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
