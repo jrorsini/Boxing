@@ -87,7 +87,7 @@ if (!empty($_POST)) {
 			</div>
 
 			<section class="boxers_bloc">
-				<h2 class="bg_gold">Derniers Boxeurs</h2>
+				<h2 class="bg_gold">Boxeurs</h2>
 				<article>
 					<img src="img/img1.png" class="border_gold">
 					<p class="color_gold">Mike Tyson est un boxeur des année 80 qui a grandit dans le coin de Brownsville .</p>
@@ -95,7 +95,7 @@ if (!empty($_POST)) {
 				</article>
 			</section>
 			<section class="fights_bloc">
-				<h2 class="bg_orange">Derniers Combats</h2>
+				<h2 class="bg_orange">Combats</h2>
 				<article>
 					<img src="img/img2.png" class="border_orange">
 					<p class="color_orange">Joe Frazier face à Muhammad Ali à été l’un des combat les plus violent des année 70</p>
@@ -103,7 +103,7 @@ if (!empty($_POST)) {
 				</article>
 			</section>
 			<section class="news_bloc">
-				<h2 class="bg_blue">Dernieres Actualitées</h2>
+				<h2 class="bg_blue">Actualitées</h2>
 				<article>
 					<img src="img/img3.png" class="border_blue">
 					<p class="color_blue">Floyd Mayweather reste Invaincu au bour de 44 combats consécutifs , à l’age de 36 ans</p>
