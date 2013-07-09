@@ -1,33 +1,5 @@
 <?php 
-if (!empty($_POST)) {
-	extract($_POST);
-	$valid = true;
-	if (empty($sujet)) {
-		$valid=false;
-	}
-	if (!preg_match("/^[a-z0-9\-_.]+@[a-z0-9\-_.]+\.[a-z]{2,3}$/i", $email)) {
-		$valid=false;
-	}
-	if (empty($email)) {
-		$valid=false;
-	}
-	if (empty($message)) {
-		$valid=false;
-	}
-	if ($valid) {
-		$to = "jeanroger.orsini@gmail.com";
-		$header = "From : <$email>";
-		if (mail($to, $sujet, $message, $header)) {
-			$erreur = "Votre mail nous est bien parvenu";
-			unset($email);
-			unset($sujet);
-			unset($message);
-		}
-		else{
-			$erreur = "une erreur est survenue et votre mail";
-		}
-	}
-}
+require_once 'cnx.php';
 ?>
 <html>
 	<head>
@@ -40,28 +12,38 @@ if (!empty($_POST)) {
 		<meta charset="utf-8">
 	</head>
 	<body>
+		<div class="subscribe">
+			<div class="subscribe_content">
+				<form action="" method="POST">
+					<input type="text" name="pseudo" placeholder="Votre pseudo">
+					<input type="email" name="subscribe_email" placeholder="Votre adresse email">
+					<input type="password" name="password" placeholder="Votre mot de passe">
+					<button type="submit" name="subscribe">S'inscrire</button>
+				</form>
+			</div>
+		</div>
 		<header>
-		<nav>
-			<ul class="web_device">
-				<li><a href="#">Boxing<em class="color_gold">Senior</em>.com</a></li>
-				<li><a href="#" class="border_gold">Boxeurs</a><span class="bg_gold"></span></li>
-				<li><a href="#" class="border_orange">Combats</a><span class="bg_orange"></span></li>
-				<li><a href="#" class="border_blue">Actualitées</a><span class="bg_blue"></span></li>
-				<li><a href="#" class="border_marron">Clubs</a><span class="bg_marron"></span></li>
-				<li>
-					<a href="#" id="connect">Connexion<div class="arrow_down"></div></a>
-					<div class="login">
-						<div class="arrow_up_border"><div class="arrow_up"></div></div>
-						<form action="">
-							<input type="text" placeholder="Votre pseudo">
-							<input type="password" placeholder="Votre mot de passe">
-							<input type="submit" value="Se connecter">
-						</form>
-					</div>
-				</li>
-				<li><a href="#">Inscription</a></li>
-			</ul>
-		</nav>
+			<nav>
+				<ul class="web_device">
+					<li><a href="#">Boxing<em class="color_gold">Senior</em>.com</a></li>
+					<li><a href="#" class="border_gold">Boxeurs</a><span class="bg_gold"></span></li>
+					<li><a href="#" class="border_orange">Combats</a><span class="bg_orange"></span></li>
+					<li><a href="#" class="border_blue">Actualitées</a><span class="bg_blue"></span></li>
+					<li><a href="#" class="border_marron">Clubs</a><span class="bg_marron"></span></li>
+					<li>
+						<a href="#" id="connect">Connexion<div class="arrow_down"></div></a>
+						<div class="login">
+							<div class="arrow_up_border"><div class="arrow_up"></div></div>
+							<form action="">
+								<input type="text" placeholder="Votre pseudo">
+								<input type="password" placeholder="Votre mot de passe">
+								<button type="submit">Se connecter</button>
+							</form>
+						</div>
+					</li>
+					<li><a href="#" id="subscribe">Inscription</a></li>
+				</ul>
+			</nav>
 		</header>
 		<div class="mobile_device">
 			<div class="mobil_header">
@@ -139,7 +121,7 @@ if (!empty($_POST)) {
 				</section>
 				<section class="contact_form">
 					<h2>Contactez-nous</h2>
-					<form action="index.php" method="post">
+					<form action="contact_form.php" method="post">
 						<input type="email" name="email" id="email" value="<?php if (isset($nom)) {echo $nom;} ?>" placeholder="Votre Adresse mail">
 						<div class="mask_form mask_form1"><span class="info_email error check"></span></div>
 						<input type="text" name="sujet" id="sujet" value="<?php if (isset($nom)) {echo $nom;} ?>" placeholder="Votre sujet">
@@ -278,6 +260,13 @@ if (!empty($_POST)) {
 						$(".login").fadeIn(200);
 					}else{
 						$(".login").fadeOut(200);
+					}
+				});
+				$("#subscribe").click(function(){
+					if($(".subscribe").is(":hidden")){
+						$(".subscribe").slideDown(200);
+					}else{
+						$(".subscribe").slideUp(200);
 					}
 				});
 
