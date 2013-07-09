@@ -1,0 +1,77 @@
+<footer>
+	<div class="footer_content">
+		<section class="newsletter_form">
+			<h2>BoxingSenior.com</h2>
+			<div class="website_structure">
+				<a href="#" class="color_gold">Boxeurs</a>
+				<a href="#" class="color_orange">Combats</a>
+				<a href="#" class="color_blue">Actualités</a>
+				<a href="#" class="color_marron">Clubs</a>
+			</div>
+			<h3>Newsletter :</h3>
+			<form action="">
+				<input type="text" placeholder="Votre Adresse mail">				
+				<button type="submit">S'inscrire</button>
+			</form>
+		</section>
+		<section class="contact_form">
+			<h2>Contactez-nous</h2>
+			<form action="contact_form.php" method="post">
+				<input type="email" name="email" id="email" value="<?php if (isset($nom)) {echo $nom;} ?>" placeholder="Votre Adresse mail">
+				<div class="mask_form mask_form1"><span class="info_email error check"></span></div>
+				<input type="text" name="sujet" id="sujet" value="<?php if (isset($nom)) {echo $nom;} ?>" placeholder="Votre sujet">
+				<div class="mask_form mask_form2"><span class="info_sujet error check"></span></div>
+				<textarea id="message" name="message" value="<?php if (isset($nom)) {echo $nom;} ?>" placeholder="Votre message..."></textarea>
+				<div class="mask_form mask_form3"><span class="info_message error check"></span></div>
+				<button type="submit" id="envoyer">Envoyer</button>
+			</form>
+		</section>
+		<section class="footer_links">
+			<h2>Suivez-nous</h2>
+			<div id="social_links">
+				<div class="social_links social_links1">
+					<div class="mask maskf">
+						<a href="#" class="f"></a>
+					</div>
+					<div class="info_links links1">Facebook</div>
+				</div>
+				<div class="social_links social_links2">
+					<div class="mask maskt">
+						<a href="#" class="t"></a>
+					</div>
+					<div class="info_links links2">Twitter</div>
+				</div>
+				<div class="social_links social_links3">
+					<div class="mask masky">
+						<a href="#" class="y"></a>
+					</div>
+					<div class="info_links links3">Youtube</div>
+				</div>
+				<div class="social_links social_links4">
+					<div class="mask maskv">
+						<a href="#" class="v"></a>
+					</div>
+					<div class="info_links links4">Vimeo</div>
+				</div>
+				<div class="social_links social_links5">
+					<div class="mask maski">
+						<a href="#" class="i"></a>
+					</div>
+					<div class="info_links links5">Google +</div>
+				</div>
+				<div class="social_links social_links6">
+					<div class="mask maskp">
+						<a href="#" class="p"></a>
+					</div>
+					<div class="info_links links6">Pinterest</div>
+				</div>
+				<div class="social_links social_links7">
+					<div class="mask maskr">
+						<a href="#" class="r"></a>
+					</div>
+					<div class="info_links links7">RSS</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</footer>
