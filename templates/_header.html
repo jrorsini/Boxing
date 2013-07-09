@@ -1,13 +1,28 @@
 <div class="subscribe">
 	<div class="subscribe_content">
-		<form action="" method="POST">
+		<form action="subscribe.php" method="post">
 			<input type="text" name="pseudo" placeholder="Votre pseudo">
-			<input type="email" name="subscribe_email" placeholder="Votre adresse email">
+			<input type="email" name="email" placeholder="Votre adresse email">
 			<input type="password" name="password" placeholder="Votre mot de passe">
 			<button type="submit" name="subscribe">S'inscrire</button>
 		</form>
 	</div>
 </div>
+<?php
+/* si le membre est connecte*/
+if(isset ($_SESSION['id'])){
+	if( $_SESSION['id']!="" || $_SESSION['pseudo']!=""){
+?>
+<a href="deconnexion.php">Deconnexion</a><br />
+<?php
+	}
+}else{
+?>
+<a href="connection.php">Connexion</a><br />
+<a href="inscription.php">Inscription</a><br />
+<?php
+}
+?>
 <header>
 	<nav>
 		<ul class="web_device">
@@ -16,18 +31,26 @@
 			<li><a href="#" class="border_orange">Combats</a><span class="bg_orange"></span></li>
 			<li><a href="#" class="border_blue">Actualitées</a><span class="bg_blue"></span></li>
 			<li><a href="#" class="border_marron">Clubs</a><span class="bg_marron"></span></li>
+			<?php if (empty($_SESSION['id'])) { ?>
 			<li>
 				<a href="#" id="connect">Connexion<div class="arrow_down"></div></a>
 				<div class="login">
 					<div class="arrow_up_border"><div class="arrow_up"></div></div>
-					<form action="">
-						<input type="text" placeholder="Votre pseudo">
-						<input type="password" placeholder="Votre mot de passe">
+					<form action="login.php" method="post">
+						<input type="text" name="pseudo" placeholder="Votre pseudo">
+						<input type="password" name="password" placeholder="Votre mot de passe">
 						<button type="submit">Se connecter</button>
 					</form>
 				</div>
 			</li>
+			<?php }else{ ?>
+				<li>
+					<a href="logout.php">Déconnexion</a>
+				</li>
+			<?php } ?>
+			<?php if (empty($_SESSION['id'])){ ?>
 			<li><a href="#" id="subscribe">Inscription</a></li>
+			<?php }else{ echo "Vous n'avez pas le droit d'acceder a cette page"; }?>
 		</ul>
 	</nav>
 </header>

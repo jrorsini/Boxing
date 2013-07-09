@@ -3,7 +3,7 @@
 $serveur = 'localhost';
 $user = 'root';
 $pass = 'root';
-$bdd = 'boxingtest';
+$db = 'boxingtest';
 $port = '3306';
 
 // $serveur = 'mysql5-20.perso';
@@ -13,7 +13,7 @@ $port = '3306';
 // $port = '3306';
 
 try {
-	$cnx = new PDO('mysql:host='.$serveur.';port='.$port.';dbname='.$bdd, $user, $pass);
+	$bdd = new PDO('mysql:host='.$serveur.';port='.$port.';dbname='.$db, $user, $pass);
 }catch (PDOException $e) {
 	echo $e->getMessage();
 }
