@@ -69,9 +69,9 @@ $(document).ready(function(){
 	});
 	$("#subscribe").click(function(){
 		if($(".subscribe").is(":hidden")){
-			$(".subscribe").slideDown(200);
+			$(".subscribe").fadeIn(200);
 		}else{
-			$(".subscribe").slideUp(200);
+			$(".subscribe").fadeOut(200);
 		}
 	});
 

@@ -1,13 +1,3 @@
-<div class="subscribe">
-	<div class="subscribe_content">
-		<form action="subscribe.php" method="post">
-			<input type="text" name="pseudo" placeholder="Votre pseudo">
-			<input type="email" name="email" placeholder="Votre adresse email">
-			<input type="password" name="password" placeholder="Votre mot de passe">
-			<button type="submit" name="subscribe">S'inscrire</button>
-		</form>
-	</div>
-</div>
 <header>
 	<nav>
 		<ul class="web_device">
@@ -42,8 +32,18 @@
 					</form>
 				</div>
 			</li>
-			<li><a href="#" id="subscribe">Inscription</a></li>
-
+			<li>
+				<a href="#" id="subscribe">Inscription<div class="arrow_down"></div></a>
+				<div class="subscribe">
+					<div class="arrow_up_border"><div class="arrow_up"></div></div>
+					<form action="subscribe.php" method="post">
+						<input type="text" name="pseudo" placeholder="Votre pseudo">
+						<input type="email" name="email" placeholder="Votre adresse email">
+						<input type="password" name="password" placeholder="Votre mot de passe">
+						<button type="submit" name="subscribe">S'inscrire</button>
+					</form>
+				</div>
+			</li>
 			<?php
 			}
 			?>

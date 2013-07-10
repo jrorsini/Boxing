@@ -39,55 +39,7 @@ body{
 .mobile_device{
 	display: none;
 }
-.subscribe{
-	display: none;
-	width: 100%;
-	height: 200px;
-	background: @dark_blue;
-	.subscribe_content{
-		margin: auto;
-		width: 960px;
-		height: 197px;
-		border-bottom: 3px solid @dark_blue;
-		background: @black;
-		input{
-			.transition;
-			width: 250px;
-			height: 30px;
-			padding: 0 0 0 10px;
-			color: #fff;
-			border: 1px solid @dark_blue;
-			margin: 15px 0px 0px 15px;
-			font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-			background: @dark_blue;
-			&:focus{
-				border: 1px solid @blue;
-			}
-			&:after{
-				content:"u";
-				font-family: @icon;
-				color: @black;
-			}
-		}
-		button[type="submit"]{
-			text-align: center;
-			font-family: @Alef;
-			padding: 0;
-			float: right;
-			margin:15px 25px 0 0;
-			width: 100px;
-			height: 30px;
-			color: #fff;
-			border: none;
-			background: @dark_blue;
-			.transition;
-			&:hover{
-				background:@blue;
-				cursor: pointer;
-			}
-		}
-	}
-}
+
 header{
 	width: 100%;
 	height: 43px;
@@ -103,12 +55,85 @@ header{
 				width: 120px;
 				height: 40px;
 				float: left;
+				input{
+					.transition;
+					width: 250px;
+					height: 30px;
+					padding: 0 0 0 10px;
+					color: #fff;
+					border: 1px solid @dark_blue;
+					margin: 15px 0px 0px 15px;
+					font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+					background: @dark_blue;
+					&:focus{
+						border: 1px solid @blue;
+					}
+					&:after{
+						content:"u";
+						font-family: @icon;
+						color: @black;
+					}
+				}
+				button[type="submit"]{
+					text-align: center;
+					font-family: @Alef;
+					padding: 0;
+					float: right;
+					margin:15px 15px 0 0;
+					width: 100px;
+					height: 30px;
+					color: #fff;
+					border: none;
+					background: @dark_blue;
+					.transition;
+					&:hover{
+						background:@blue;
+						cursor: pointer;
+					}
+				}
 				&:first-child{
 					width: 160px;
 				}
+				&:nth-child(7){
+					float: left;
+					&:hover .arrow_down{
+						opacity:1;
+					}
+					.subscribe{
+						display: none;
+						top: 50px;
+						right: -20px;
+						z-index: 5;
+						position: absolute;
+						width: 280px;
+						height: 195px;
+						background: @black;
+						border: 2px solid @blue;
+						.arrow_up_border{
+							position: absolute;
+							top: -17px;
+							right: 8px;
+							width: 0;
+							height: 0; 
+							border-style: solid;
+							border-width: 0 17px 17px 17px;
+							border-color: transparent transparent @blue transparent;	
+							.arrow_up{
+								position: absolute;
+								top: 3px;
+								right: -14px;
+								width: 0; 
+								height: 0; 
+								border-style: solid;
+								border-width: 0 14px 14px 14px;
+								border-color: transparent transparent @black transparent;	
+							}
+						}
+					}
+				}
 				&:nth-child(6){
 					float: left;
-					margin-left: 80px;
+					margin-left: 60px;
 					&:hover .arrow_down{
 						opacity:1;
 					}
@@ -142,42 +167,7 @@ header{
 								border-color: transparent transparent @black transparent;	
 							}
 						}
-						input{
-							.transition;
-							width: 250px;
-							height: 30px;
-							padding: 0 0 0 10px;
-							color: #fff;
-							border: 1px solid @dark_blue;
-							margin: 15px 0px 0px 15px;
-							font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-							background: @dark_blue;
-							&:focus{
-								border: 1px solid @blue;
-							}
-							&:after{
-								content:"u";
-								font-family: @icon;
-								color: @black;
-							}
-						}
-						button[type="submit"]{
-							text-align: center;
-							font-family: @Alef;
-							padding: 0;
-							float: right;
-							margin:15px 15px 0 0;
-							width: 100px;
-							height: 30px;
-							color: #fff;
-							border: none;
-							background: @dark_blue;
-							.transition;
-							&:hover{
-								background:@blue;
-								cursor: pointer;
-							}
-						}
+						
 					}
 				}
 				.arrow_down{
@@ -223,7 +213,6 @@ header{
 }
 
 #slider{
-	margin-left: 10px;
 	ul.bjqs-controls.v-centered li a{
 		display:block;
 		padding:10px;
@@ -280,27 +269,26 @@ header{
 	ol.bjqs-markers{display: none;}
 }
 
-.boxers_bloc{h2:before{content:"u";}}
-.fights_bloc{h2:before{content:"c";}}
-.news_bloc{h2:before{content:"a";}}
+.boxers_bloc{h2:before{content:"u";}margin:20px 10px 20px 0;}
+.fights_bloc{h2:before{content:"c";}margin:20px 10px 20px 10px;}
+.news_bloc{h2:before{content:"a";}margin:20px 0px 20px 10;}
 
 .wrapper{
 	section{
 		float: left;
-		margin:20px 10px;
 		position: relative;
-		width: 300px;
+		width: 306.5px;
 		height: 160px;
 		background: @black;
 		h2{
-			width: 280px;
-			padding-left: 20px;
+			width: 306.5px;
 			height: 30px;
 			line-height: 30px;
 			font-family: @Alef;
 			font-size: 1.2em;
+			text-align: center;
 			&:before{
-				margin-right: 10px;
+				margin-right: 8px;
 				font-family: @icon;
 			}
 		}
