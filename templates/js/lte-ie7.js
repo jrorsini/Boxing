@@ -18,7 +18,10 @@ window.onload = function() {
 			'icon-arrow-left' : '&#x3c;',
 			'icon-google-plus' : '&#x67;',
 			'icon-feed' : '&#x72;',
-			'icon-menu' : '&#x6f;'
+			'icon-menu' : '&#x6f;',
+			'icon-user-2' : '&#x62;',
+			'icon-trophy' : '&#x64;',
+			'icon-search' : '&#x73;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
