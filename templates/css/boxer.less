@@ -1,0 +1,120 @@
+.search_boxer{
+	width: 800px;
+	height: 30px;
+	background: @gold;
+	border: 1px solid @black;
+	form{
+		label{
+			font-family: @Alef;
+			line-height: 30px;
+			float: left;
+			margin: 0 10px 0 10px;
+		}
+		input{
+			background: @black;
+			color: @gold;
+			font-size: 1.0em;
+			border-left: none;
+			border-right: none;
+			width: 606px;
+			height: 30px;
+			border-top: 1px solid @black;
+			border-bottom: 1px solid @black;
+			.transition;
+			padding-left: 10px;
+			float: left;
+			&:focus{border-color:@gold;}
+		}
+		button{
+			background: @gold;
+			float: left;
+			width: 30px;
+			height: 30px;
+			border-radius: 0px;
+			border: none;
+			&:before{
+				content:"s";
+				font-size: 1.8em;
+				font-family: @icon;
+				margin-left: 1px;
+			}
+		}
+	}
+}
+.boxer_list{
+	margin: 20px 0 0 0;
+	width: 960px;
+	height: 400px;
+	.boxer_list_bloc{
+		position: relative;
+		float: left;
+		margin: 0 12px 30px 0;
+		width: 180px;
+		height: 250px;
+		a{
+			text-decoration: none;
+			.see_boxer{
+				&:before{
+					content:"s";
+					font-family: @icon;
+					color: @black;
+					text-align: center;
+					font-size: 3em;
+				}
+				box-shadow:inset 0px 0px 50px black;
+				text-align: center;
+				line-height: 200px;
+				position: absolute;
+				width: 180px;
+				height: 200px;
+				background: @gold;
+				opacity: 0;
+				.transition;
+				&:hover{
+					opacity:0.4;
+				}
+			}
+		}
+		.list_boxer_content{
+			border-top:1px solid @gold;
+			border-bottom:1px solid @gold;
+			position: absolute;
+			background: @black;
+			width: 180px;
+			height: 70px;
+			.transition;
+			z-index: 4;
+			&:hover{height: 110px;}
+			&:hover .hidden_content{opacity: 1;}
+			&:hover .arrow_down{opacity: 0;}
+			.arrow_down{
+				.transition;
+				opacity: 1;
+				position: absolute;
+				bottom: 7px;
+				right: 75px;
+				width: 0; 
+				height: 0; 
+				border-style: solid;
+				border-width: 5px 6px 0 6px;
+				border-color: @gold transparent transparent 
+			}
+			p{
+					color: @gold;
+					font-family: @orienta;
+					font-size: 0.8em;
+					float: left;
+					height: 25px;
+					line-height: 25px;
+					margin-left: 10px;
+			}
+			.visible_content{
+				margin-top: 5px;
+				p{.wins{color: #35ef54;}.loss{color: #fa1121;}.draw{color: #63d5ff;}.nc{color: grey;}}
+				.boxer_name{&:before{content:"b";font-family: @icon;margin-right: 5px;}}
+				.boxer_record{&:before{content:"d";font-family: @icon;margin-right: 5px;}}
+			}
+			.hidden_content{.transition;opacity: 0;}
+		}
+	}
+}

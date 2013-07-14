@@ -1,0 +1,35 @@
+<div class="search_boxer">
+	<form action="">
+		<label for="">Chercher un boxeur</label>
+		<input type="text">
+		<button type="submit"></button>
+	</form>
+</div>
+<div class="boxer_list">
+	<?php 
+        $sql = 'SELECT * FROM boxers ORDER BY id LIMIT 20';
+        $req = $bdd->prepare($sql);
+        $req->execute();	
+        while ($result = $req->fetch(PDO::FETCH_OBJ)): ?>
+		<div class="boxer_list_bloc">
+			<a href="#"><div class="see_boxer"></div></a>
+			<img src="templates/img/list_img/<?php echo $result->boxer_list_picture; ?>_list.png" class="boxer_list_img"/>
+			<div class="list_boxer_content">
+				<div class="visible_content">
+					<p class="boxer_name"><?php echo $result->boxer_full_name; ?></p>
+					<p class="boxer_record">
+						<span class="wins"><?php echo $result->boxer_wins;?>(<?php echo $result->boxer_ko;?>KO)</span> - 
+						<span class="loss"><?php echo $result->boxer_losses;?></span> - 
+						<span class="draw"><?php echo $result->boxer_draws;?></span> - 
+						<span class="nc"><?php echo $result->boxer_no_contest;?>(NC)</span>
+					</p>
+				</div>
+				<div class="hidden_content">
+					<p class="rating">Note moyenne : 3.9 / 5</p>
+					<p class="comments">Commentaire(s) : 11</p>
+				</div>
+				<div class="arrow_down"></div>
+			</div>
+		</div>
+    <?php endwhile; ?>
+</div>
