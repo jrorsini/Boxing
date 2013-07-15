@@ -1,45 +1,96 @@
 .search_boxer{
-	width: 800px;
+	position: relative;
+	width: 490px;
 	height: 30px;
 	background: @gold;
 	border: 1px solid @black;
-	form{
-		label{
-			font-family: @Alef;
-			line-height: 30px;
-			float: left;
-			margin: 0 10px 0 10px;
-		}
-		input{
-			background: @black;
-			color: @gold;
-			font-size: 1.0em;
-			border-left: none;
-			border-right: none;
-			width: 606px;
-			height: 30px;
-			border-top: 1px solid @black;
-			border-bottom: 1px solid @black;
-			.transition;
-			padding-left: 10px;
-			float: left;
-			&:focus{border-color:@gold;}
-		}
-		button{
-			background: @gold;
-			float: left;
-			width: 30px;
-			height: 30px;
-			border-radius: 0px;
-			border: none;
-			&:before{
-				content:"s";
-				font-size: 1.8em;
-				font-family: @icon;
-				margin-left: 1px;
+	label{
+		font-family: @Alef;
+		line-height: 30px;
+		float: left;
+		margin: 0 10px 0 10px;
+	}
+	input{
+		background: @black;
+		color: @gold;
+		font-size: 1.0em;
+		border-left: none;
+		border-right: none;
+		width: 326px;
+		height: 30px;
+		border-top: 1px solid @black;
+		border-bottom:none;
+		.transition;
+		padding-left: 10px;
+		float: left;
+		background: @black;
+		&:focus{border-color:@gold;background: @black;}
+	}
+	.boxer_result{
+		z-index: 5;
+		position: absolute;
+		background: @dark_blue;
+		border: 1px solid @gold;
+		border-top: none;
+		width: 325px;
+		top: 30px;
+		left: 163px;
+		ul li{
+			font-family: @orienta;
+			a{
+				position: relative;
+				text-decoration: none;
+				width: 285px;
+				height: 30px;
+				line-height: 30px;
+				padding-left: 40px;
+				float: left;
+				color: #fff;
+				border-bottom: 1px solid @black;
+				img{
+					position: absolute;
+					left: 0px;
+					width: 30px;
+					height: 30px;
+					display: block;
+					border-right: 1px solid @black;
+				}
+				.ratio_wld{
+					position: absolute;
+					top: 13px;
+					left: 210px;
+					display: block;
+					height: 4px;
+					&:before{
+						content:"d";
+						font-family: @icon;
+						color: @gold;
+						text-align: center;
+						font-size: 0.8em;
+						float: left;
+						margin: -13px 8px 0 0;
+					}
+				}
+				.rw{background-color: #35ef54;height: 4px;display: block;float: left;}
+				.rl{background-color: #fa1121;height: 4px;display: block;float: left;}
+				.rd{background-color: #63d5ff;height: 4px;display: block;float: left;}
+				.rko{background-color: #2FBF2F;;height: 4px;display: block;float: left;}
+
+			}
+			p{
+				max-width: 295px;
+				min-height: 30px;
+				line-height: 30px;
+				padding-left: 10px;
+				float: left;
+				color: #fff;
 			}
 		}
 	}
+}
+.itemhover {
+	background-color:@black;
+	color:@black;
 }
 .boxer_list{
 	margin: 20px 0 0 0;
@@ -55,11 +106,11 @@
 			text-decoration: none;
 			.see_boxer{
 				&:before{
-					content:"s";
+					content:"+";
 					font-family: @icon;
 					color: @black;
 					text-align: center;
-					font-size: 3em;
+					font-size: 5em;
 				}
 				box-shadow:inset 0px 0px 50px black;
 				text-align: center;
@@ -110,9 +161,9 @@
 			}
 			.visible_content{
 				margin-top: 5px;
-				p{.wins{color: #35ef54;}.loss{color: #fa1121;}.draw{color: #63d5ff;}.nc{color: grey;}}
-				.boxer_name{&:before{content:"b";font-family: @icon;margin-right: 5px;}}
-				.boxer_record{&:before{content:"d";font-family: @icon;margin-right: 5px;}}
+				p{color: #FFF;.wins{color: #35ef54;}.loss{color: #fa1121;}.draw{color: #63d5ff;}.nc{color: grey;}}
+				.boxer_name{&:before{content:"b";font-family: @icon;margin-right: 5px;color: @gold}}
+				.boxer_record{&:before{content:"d";font-family: @icon;margin-right: 5px;color: @gold}}
 			}
 			.hidden_content{.transition;opacity: 0;}
 		}

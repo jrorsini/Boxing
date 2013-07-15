@@ -14,7 +14,7 @@ require_once 'cnx.php';
 			<?php include 'templates/blocks/index.html';?>
 		</div>
 		<?php include 'templates/_footer.html';?>
-		<?php include 'templates/footer_sources.html';?>		
+		<?php include 'templates/footer_sources.html';?>
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	</body>
 </html>

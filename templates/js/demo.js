@@ -1,3 +1,9 @@
+/*
+***************************************
+	DETECTIONS DU FORMAT DES CHAMPS
+***************************************
+*/
+
 $(document).ready(function(){
 	$("#envoyer").click(function(){
 		//valid=true;
@@ -60,6 +66,12 @@ $(document).ready(function(){
 		$('.info_'+ name).css({"opacity":"1"});
 	}
 
+/*
+***************************************
+	POP UP POUR LA CONNEXION ET L'INSCRIPTION
+***************************************
+*/
+
 	$("#connect").click(function(){
 		if($(".login").is(":hidden")){
 			$(".login").fadeIn(200);
@@ -80,6 +92,118 @@ $(document).ready(function(){
 			$(".mobile_device nav").slideDown(200);
 		}else{
 			$(".mobile_device nav").slideUp(200);
+		}
+	});
+});
+
+/*
+***************************************
+	MOTEUR DE RECHERCHE POUR LES BOXEURS
+***************************************
+*/
+
+var currentSelection = 0;
+var currentUrl = '';
+
+function setSelected(boxer_result_item) {
+	$(".boxer_result ul li a").removeClass("itemhover");
+	$(".boxer_result ul li a").eq(boxer_result_item).addClass("itemhover");
+	currentUrl = $(".boxer_result ul li a").eq(boxer_result_item).attr("href");
+}
+
+function navigate(direction) {
+	if($(".boxer_result ul li .itemhover").size() === 0) {
+		currentSelection = -1;
+	}
+
+	if(direction === 'up' && currentSelection !== -1) {
+		if(currentSelection !== 0) {
+			currentSelection--;
+		}
+	} else if (direction === 'down') {
+		if(currentSelection !== $(".boxer_result ul li").size() -1) {
+			currentSelection++;
+		}
+	}
+	setSelected(currentSelection);
+}
+
+google.setOnLoadCallback(function()
+{
+	$(document).keypress(function(e) {
+		switch(e.keyCode) {
+			case 38:
+				navigate('up');
+			break;
+			case 40:
+				navigate('down');
+			break;
+			case 13:
+				if(currentUrl !== '') {
+					window.location = currentUrl;
+				}
+			break;
+		}
+	});
+	
+	for(var i = 0; i < $(".boxer_result ul li a").size(); i++) {
+		$(".boxer_result ul li a").eq(i).data("number", i);
+	}
+	
+	$(".boxer_result ul li a").hover(
+		function () {
+			currentSelection = $(this).data("number");
+			setSelected(currentSelection);
+		}, function() {
+			$(".boxer_result ul li a").removeClass("itemhover");
+			currentUrl = '';
+		}
+	);
+});
+
+$(document).keydown(function(e){
+
+    //jump from search field to search results on keydown
+    if (e.keyCode === 40) {
+        $(".boxer_search").blur();
+          return false;
+    }
+
+    //hide search results on ESC
+    if (e.keyCode === 27) {
+        $("#results").hide();
+        $(".boxer_result ul").blur();
+          return false;
+    }
+
+    //focus on search field on back arrow or backspace press
+    if (e.keyCode === 37 || e.keyCode === 8) {
+        $(".boxer_search").focus();
+    }
+
+    $("body").click(function() {
+        $(".boxer_result ul").hide();
+    });
+});
+
+/*
+****************************************
+    RECHERCHE EN AJAX DU BOXEUR
+****************************************
+*/
+$(document).ready(function(){
+	$(".boxer_search").keyup(function(){
+		var recherche = $(".search_boxer input").val();
+		var data = 'motclef=' + recherche;
+		if (recherche.length>0){
+			$.ajax({
+				type : "GET",
+				url : "boxer_results.php",
+				data : data,
+				success: function(server_response){
+					$(".boxer_result ul").html(server_response).show();
+				}
+			});
 		}
 	});
 });

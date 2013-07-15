@@ -495,27 +495,27 @@ you can use the generic selector below, but it's slower:
   }
 }
 .search_boxer {
-  width: 800px;
+  position: relative;
+  width: 490px;
   height: 30px;
   background: #faae39;
   border: 1px solid #070707;
 }
-.search_boxer form label {
+.search_boxer label {
   font-family: 'Alef', sans-serif;
   line-height: 30px;
   float: left;
   margin: 0 10px 0 10px;
 }
-.search_boxer form input {
-  background: #070707;
+.search_boxer input {
   color: #faae39;
   font-size: 1.0em;
   border-left: none;
   border-right: none;
-  width: 606px;
+  width: 326px;
   height: 30px;
   border-top: 1px solid #070707;
-  border-bottom: 1px solid #070707;
+  border-bottom: none;
   -webkit-transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -ms-transition: 0.2s ease all;
@@ -523,23 +523,95 @@ you can use the generic selector below, but it's slower:
   transition: 0.2s ease all;
   padding-left: 10px;
   float: left;
+  background: #070707;
 }
-.search_boxer form input:focus {
+.search_boxer input:focus {
   border-color: #faae39;
+  background: #070707;
 }
-.search_boxer form button {
-  background: #faae39;
+.search_boxer .boxer_result {
+  z-index: 5;
+  position: absolute;
+  background: #1f282f;
+  border: 1px solid #faae39;
+  border-top: none;
+  width: 325px;
+  top: 30px;
+  left: 163px;
+}
+.search_boxer .boxer_result ul li {
+  font-family: 'Orienta', sans-serif;
+}
+.search_boxer .boxer_result ul li a {
+  position: relative;
+  text-decoration: none;
+  width: 285px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 40px;
   float: left;
+  color: #fff;
+  border-bottom: 1px solid #070707;
+}
+.search_boxer .boxer_result ul li a img {
+  position: absolute;
+  left: 0px;
   width: 30px;
   height: 30px;
-  border-radius: 0px;
-  border: none;
+  display: block;
+  border-right: 1px solid #070707;
 }
-.search_boxer form button:before {
-  content: "s";
-  font-size: 1.8em;
+.search_boxer .boxer_result ul li a .ratio_wld {
+  position: absolute;
+  top: 13px;
+  left: 210px;
+  display: block;
+  height: 4px;
+}
+.search_boxer .boxer_result ul li a .ratio_wld:before {
+  content: "d";
   font-family: 'icomoon';
-  margin-left: 1px;
+  color: #faae39;
+  text-align: center;
+  font-size: 0.8em;
+  float: left;
+  margin: -13px 8px 0 0;
+}
+.search_boxer .boxer_result ul li a .rw {
+  background-color: #35ef54;
+  height: 4px;
+  display: block;
+  float: left;
+}
+.search_boxer .boxer_result ul li a .rl {
+  background-color: #fa1121;
+  height: 4px;
+  display: block;
+  float: left;
+}
+.search_boxer .boxer_result ul li a .rd {
+  background-color: #63d5ff;
+  height: 4px;
+  display: block;
+  float: left;
+}
+.search_boxer .boxer_result ul li a .rko {
+  background-color: #2FBF2F;
+  height: 4px;
+  display: block;
+  float: left;
+}
+.search_boxer .boxer_result ul li p {
+  max-width: 295px;
+  min-height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  float: left;
+  color: #fff;
+}
+.itemhover {
+  background-color: #070707;
+  color: #070707;
 }
 .boxer_list {
   margin: 20px 0 0 0;
@@ -572,11 +644,11 @@ you can use the generic selector below, but it's slower:
   transition: 0.2s ease all;
 }
 .boxer_list .boxer_list_bloc a .see_boxer:before {
-  content: "s";
+  content: "+";
   font-family: 'icomoon';
   color: #070707;
   text-align: center;
-  font-size: 3em;
+  font-size: 5em;
 }
 .boxer_list .boxer_list_bloc a .see_boxer:hover {
   opacity: 0.4;
@@ -632,6 +704,9 @@ you can use the generic selector below, but it's slower:
 .boxer_list .boxer_list_bloc .list_boxer_content .visible_content {
   margin-top: 5px;
 }
+.boxer_list .boxer_list_bloc .list_boxer_content .visible_content p {
+  color: #FFF;
+}
 .boxer_list .boxer_list_bloc .list_boxer_content .visible_content p .wins {
   color: #35ef54;
 }
@@ -648,11 +723,13 @@ you can use the generic selector below, but it's slower:
   content: "b";
   font-family: 'icomoon';
   margin-right: 5px;
+  color: #faae39;
 }
 .boxer_list .boxer_list_bloc .list_boxer_content .visible_content .boxer_record:before {
   content: "d";
   font-family: 'icomoon';
   margin-right: 5px;
+  color: #faae39;
 }
 .boxer_list .boxer_list_bloc .list_boxer_content .hidden_content {
   -webkit-transition: 0.2s ease all;
