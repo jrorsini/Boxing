@@ -529,7 +529,7 @@ you can use the generic selector below, but it's slower:
   border-color: #faae39;
   background: #070707;
 }
-.search_boxer .boxer_result {
+.search_boxer .result {
   z-index: 5;
   position: absolute;
   background: #1f282f;
@@ -539,10 +539,10 @@ you can use the generic selector below, but it's slower:
   top: 30px;
   left: 163px;
 }
-.search_boxer .boxer_result ul li {
+.search_boxer .result ul li {
   font-family: 'Orienta', sans-serif;
 }
-.search_boxer .boxer_result ul li a {
+.search_boxer .result ul li a {
   position: relative;
   text-decoration: none;
   width: 285px;
@@ -551,24 +551,24 @@ you can use the generic selector below, but it's slower:
   padding-left: 40px;
   float: left;
   color: #fff;
-  border-bottom: 1px solid #070707;
 }
-.search_boxer .boxer_result ul li a img {
+.search_boxer .result ul li a img {
   position: absolute;
-  left: 0px;
-  width: 30px;
-  height: 30px;
+  top: 2.5px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
   display: block;
   border-right: 1px solid #070707;
 }
-.search_boxer .boxer_result ul li a .ratio_wld {
+.search_boxer .result ul li a .ratio_wld {
   position: absolute;
   top: 13px;
   left: 210px;
   display: block;
   height: 4px;
 }
-.search_boxer .boxer_result ul li a .ratio_wld:before {
+.search_boxer .result ul li a .ratio_wld:before {
   content: "d";
   font-family: 'icomoon';
   color: #faae39;
@@ -577,31 +577,31 @@ you can use the generic selector below, but it's slower:
   float: left;
   margin: -13px 8px 0 0;
 }
-.search_boxer .boxer_result ul li a .rw {
+.search_boxer .result ul li a .rw {
   background-color: #35ef54;
   height: 4px;
   display: block;
   float: left;
 }
-.search_boxer .boxer_result ul li a .rl {
+.search_boxer .result ul li a .rl {
   background-color: #fa1121;
   height: 4px;
   display: block;
   float: left;
 }
-.search_boxer .boxer_result ul li a .rd {
+.search_boxer .result ul li a .rd {
   background-color: #63d5ff;
   height: 4px;
   display: block;
   float: left;
 }
-.search_boxer .boxer_result ul li a .rko {
+.search_boxer .result ul li a .rko {
   background-color: #2FBF2F;
   height: 4px;
   display: block;
   float: left;
 }
-.search_boxer .boxer_result ul li p {
+.search_boxer .result ul li p {
   max-width: 295px;
   min-height: 30px;
   line-height: 30px;
@@ -738,6 +738,267 @@ you can use the generic selector below, but it's slower:
   -o-transition: 0.2s ease all;
   transition: 0.2s ease all;
   opacity: 0;
+}
+.search_fight {
+  position: relative;
+  width: 513px;
+  height: 30px;
+  background: #f05a23;
+  border: 1px solid #070707;
+}
+.search_fight label {
+  font-family: 'Alef', sans-serif;
+  line-height: 30px;
+  float: left;
+  margin: 0 10px 0 10px;
+}
+.search_fight input {
+  color: #f05a23;
+  font-size: 1.0em;
+  border-left: none;
+  border-right: none;
+  width: 346px;
+  height: 30px;
+  border-top: 1px solid #070707;
+  border-bottom: none;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  padding-left: 10px;
+  float: left;
+  background: #070707;
+}
+.search_fight input:focus {
+  border-color: #f05a23;
+  background: #070707;
+}
+.search_fight .result {
+  z-index: 5;
+  position: absolute;
+  background: #1f282f;
+  border: 1px solid #f05a23;
+  border-top: none;
+  width: 345px;
+  top: 30px;
+  left: 166px;
+}
+.search_fight .result ul li {
+  text-align: center;
+  font-family: 'Orienta', sans-serif;
+}
+.search_fight .result ul li a {
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  width: 345px;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  color: #fff;
+}
+.search_fight .result ul li a .search_img_red {
+  left: 0px;
+  border-right: 4px solid #FA1020;
+}
+.search_fight .result ul li a .search_img_blue {
+  right: 0px;
+  border-left: 4px solid #37A5ED;
+}
+.search_fight .result ul li a img {
+  top: 0px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+.search_fight .result ul li p {
+  max-width: 295px;
+  min-height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  float: left;
+  color: #fff;
+}
+.fight_itemhover {
+  background-color: #070707;
+  color: #070707;
+}
+.fight_list {
+  margin: 20px 0 0 0;
+  width: 960px;
+  height: 400px;
+}
+.fight_list .fight_list_bloc {
+  position: relative;
+  float: left;
+  margin: 0 12px 50px 0;
+  width: 300px;
+  height: 250px;
+}
+.fight_list .fight_list_bloc .fight_date {
+  position: absolute;
+  font-family: 'Orienta', sans-serif;
+  color: #fff;
+  top: 5px;
+  left: 5px;
+}
+.fight_list .fight_list_bloc a {
+  text-decoration: none;
+}
+.fight_list .fight_list_bloc a .see_fight {
+  box-shadow: inset 0px 0px 50px black;
+  text-align: center;
+  line-height: 200px;
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  background: #f05a23;
+  opacity: 0;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+.fight_list .fight_list_bloc a .see_fight:before {
+  content: "+";
+  font-family: 'icomoon';
+  color: #070707;
+  text-align: center;
+  font-size: 5em;
+}
+.fight_list .fight_list_bloc a:hover .see_fight {
+  opacity: 0.4;
+}
+.fight_list .fight_list_bloc a:hover .corner_fighter {
+  opacity: 0.4;
+}
+.fight_list .fight_list_bloc .list_fight_content {
+  border-top: 1px solid #f05a23;
+  border-bottom: 1px solid #f05a23;
+  position: absolute;
+  background: #070707;
+  width: 300px;
+  height: 80px;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  z-index: 4;
+}
+.fight_list .fight_list_bloc .list_fight_content:hover {
+  height: 110px;
+}
+.fight_list .fight_list_bloc .list_fight_content:hover .hidden_content {
+  opacity: 1;
+}
+.fight_list .fight_list_bloc .list_fight_content:hover .arrow_down {
+  opacity: 0;
+}
+.fight_list .fight_list_bloc .list_fight_content .arrow_down {
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  opacity: 1;
+  position: absolute;
+  bottom: 0px;
+  right: 140px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 6px 0 6px;
+  border-color: #f05a23 transparent transparent;
+}
+.fight_list .fight_list_bloc .list_fight_content p {
+  color: #f05a23;
+  font-family: 'Orienta', sans-serif;
+  font-size: 0.8em;
+  float: left;
+  height: 25px;
+  line-height: 25px;
+  margin-left: 10px;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content {
+  margin-top: 5px;
+  padding-bottom: 10px;
+  background: #070707;
+  height: 70px;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content p {
+  color: #FFF;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content p .wins {
+  color: #35ef54;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content p .loss {
+  color: #fa1121;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content p .draw {
+  color: #63d5ff;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content p .nc {
+  color: grey;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content .red_corner_fighter {
+  top: 0px;
+  left: 0px;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content .blue_corner_fighter {
+  top: 35px;
+  right: 0px;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content .corner_fighter {
+  opacity: 1;
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  z-index: 0;
+  width: 300px;
+  height: 35px;
+  display: block;
+  position: absolute;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content .corner_fighter p {
+  width: 255px;
+  padding-left: 10px;
+  height: 35px;
+  position: absolute;
+  color: #fff;
+  font-family: 'Orienta', sans-serif;
+  float: left;
+  line-height: 35px;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content .corner_fighter .red_corner_p {
+  left: 25px;
+  background: rgba(255, 36, 36, 0.2);
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content .corner_fighter .blue_corner_p {
+  left: 25px;
+  background: rgba(36, 118, 255, 0.4);
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content .corner_fighter img {
+  position: absolute;
+  width: 35px;
+}
+.fight_list .fight_list_bloc .list_fight_content .visible_content .corner_fighter .blue_corner_img {
+  right: 0px;
+}
+.fight_list .fight_list_bloc .list_fight_content .hidden_content {
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -ms-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  opacity: 0;
+  position: absolute;
+  top: 80px;
 }
 body {
   background: #1f282f;

@@ -1,0 +1,48 @@
+<div class="search_fight">
+	<label for="">Chercher un combat</label>
+	<input type="text" name="fight_search" class="fight_search">
+	<div class="result">
+		<ul>
+		</ul>
+	</div>
+</div>
+<div class="fight_list">
+	<?php 
+        $sql = 'SELECT * FROM fights ORDER BY id LIMIT 9';
+        $req = $bdd->prepare($sql);
+        $req->execute();	
+        while ($result = $req->fetch(PDO::FETCH_OBJ)): ?>
+		<div class="fight_list_bloc">
+			<a href="#">
+				<div class="see_fight"></div>
+			</a>
+			<p class="fight_date"><?php echo $result->fight_date; ?></p>
+			<img src="templates/img/fight_list/<?php echo $result->fight_img;?>" class="boxer_list_img"/>
+			<div class="list_fight_content">
+				<div class="visible_content">
+					<div class="red_corner_fighter corner_fighter"><img src="templates/img/mini/<?php echo $result->red_corner_img; ?>">
+						<p class="red_corner_p"><?php echo $result->red_corner_name; ?> / <?php echo $result->red_corner_age; ?> ans /
+							<span></span>
+							<span class="wins"><?php echo $result->red_corner_wins; ?></span> -
+							<span class="loss"><?php echo $result->red_corner_loss; ?></span> -
+							<span class="draw"><?php echo $result->red_corner_draws; ?></span>
+						</p>
+					</div>
+					<div class="blue_corner_fighter corner_fighter"><img src="templates/img/mini/<?php echo $result->blue_corner_img; ?>">
+						<p class="blue_corner_p"><?php echo $result->blue_corner_name; ?> / <?php echo $result->blue_corner_age; ?> ans /
+							<span></span>
+							<span class="wins"><?php echo $result->blue_corner_wins; ?></span> -
+							<span class="loss"><?php echo $result->blue_corner_loss; ?></span> -
+							<span class="draw"><?php echo $result->blue_corner_draws; ?></span>
+						</p>
+					</div>
+				</div>
+				<div class="hidden_content">
+					<p class="rating">Note moyenne : 3.9 / 5</p>
+					<p class="comments">Commentaire(s) : 191</p>
+				</div>
+				<div class="arrow_down"></div>
+			</div>
+		</div>
+    <?php endwhile; ?>
+</div>

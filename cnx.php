@@ -14,6 +14,8 @@ $port = '3306';
 
 try {
 	$bdd = new PDO('mysql:host='.$serveur.';port='.$port.';dbname='.$db, $user, $pass);
+	$bdd->exec("set names utf8");
+
 }catch (PDOException $e) {
 	echo $e->getMessage();
 }

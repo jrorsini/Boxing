@@ -1,0 +1,205 @@
+.search_fight{
+	position: relative;
+	width: 513px;
+	height: 30px;
+	background: @orange;
+	border: 1px solid @black;
+	label{
+		font-family: @Alef;
+		line-height: 30px;
+		float: left;
+		margin: 0 10px 0 10px;
+	}
+	input{
+		background: @black;
+		color: @orange;
+		font-size: 1.0em;
+		border-left: none;
+		border-right: none;
+		width: 346px;
+		height: 30px;
+		border-top: 1px solid @black;
+		border-bottom:none;
+		.transition;
+		padding-left: 10px;
+		float: left;
+		background: @black;
+		&:focus{border-color:@orange;background: @black;}
+	}
+	.result{
+		z-index: 5;
+		position: absolute;
+		background: @dark_blue;
+		border: 1px solid @orange;
+		border-top: none;
+		width: 345px;
+		top: 30px;
+		left: 166px;
+		ul li{
+			text-align: center;
+			font-family: @orienta;
+			a{
+				text-align: center;
+				position: relative;
+				text-decoration: none;
+				width: 345px;
+				height: 30px;
+				line-height: 30px;
+				float: left;
+				color: #fff;
+				.search_img_red{
+					left: 0px;
+					border-right: 4px solid #FA1020;
+				}				
+				.search_img_blue{
+					right: 0px;
+					border-left: 4px solid #37A5ED;
+
+				}
+				img{
+					top: 0px;
+					position: absolute;
+					width: 30px;
+					height: 30px;
+					display: block;
+				}
+			}
+			p{
+				max-width: 295px;
+				min-height: 30px;
+				line-height: 30px;
+				padding-left: 10px;
+				float: left;
+				color: #fff;
+			}
+		}
+	}
+}
+.fight_itemhover {
+	background-color:@black;
+	color:@black;
+}
+.fight_list{
+	margin: 20px 0 0 0;
+	width: 960px;
+	height: 400px;
+	.fight_list_bloc{
+		position: relative;
+		float: left;
+		margin: 0 12px 50px 0;
+		width: 300px;
+		height: 250px;
+		.fight_date{
+			position: absolute;
+			font-family: @orienta;
+			color: #fff;
+			top: 5px;
+			left: 5px
+		}
+		a{
+			text-decoration: none;
+			.see_fight{
+				&:before{
+					content:"+";
+					font-family: @icon;
+					color: @black;
+					text-align: center;
+					font-size: 5em;
+				}
+				box-shadow:inset 0px 0px 50px black;
+				text-align: center;
+				line-height: 200px;
+				position: absolute;
+				width: 300px;
+				height: 200px;
+				background: @orange;
+				opacity: 0;
+				.transition;
+			}
+			&:hover .see_fight{
+				opacity:0.4;
+			}
+			&:hover .corner_fighter{
+				opacity:0.4;
+			}
+		}
+		.list_fight_content{
+			border-top:1px solid @orange;
+			border-bottom:1px solid @orange;
+			position: absolute;
+			background: @black;
+			width: 300px;
+			height: 80px;
+			.transition;
+			z-index: 4;
+			&:hover{height: 110px;}
+			&:hover .hidden_content{opacity: 1;}
+			&:hover .arrow_down{opacity: 0;}
+			.arrow_down{
+				.transition;
+				opacity: 1;
+				position: absolute;
+				bottom: 0px;
+				right: 140px;
+				width: 0; 
+				height: 0; 
+				border-style: solid;
+				border-width: 5px 6px 0 6px;
+				border-color: @orange transparent transparent 
+			}
+			p{
+				color: @orange;
+				font-family: @orienta;
+				font-size: 0.8em;
+				float: left;
+				height: 25px;
+				line-height: 25px;
+				margin-left: 10px;
+			}
+			.visible_content{
+				margin-top: 5px;
+				padding-bottom: 10px;
+				background: @black;
+				height: 70px;
+				p{color: #FFF;.wins{color: #35ef54;}.loss{color: #fa1121;}.draw{color: #63d5ff;}.nc{color: grey;}}
+				.red_corner_fighter{top: 0px;left: 0px;}
+				.blue_corner_fighter{top: 35px;right: 0px;}
+				.corner_fighter{
+					opacity: 1;
+					.transition;
+					z-index: 0;
+					width: 300px;
+					height: 35px;
+					display: block;
+					position: absolute;
+					p{
+						width: 255px;
+						padding-left: 10px;
+						height: 35px;
+						position: absolute;
+						color: #fff;
+						font-family: @orienta;
+						float: left;
+						line-height: 35px;
+					}
+					.red_corner_p{
+						left: 25px;
+						background: rgba(255,36,36,0.2);
+					}
+					.blue_corner_p{
+						left: 25px;
+						background: rgba(36,118,255,0.4);
+					}
+					img{
+						position: absolute;
+						width: 35px;
+					}
+					.blue_corner_img{
+						right: 0px;
+					}
+				}
+			}
+			.hidden_content{.transition;opacity: 0;position: absolute;top: 80px;}
+		}
+	}
+}
