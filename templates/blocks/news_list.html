@@ -1,0 +1,17 @@
+<div class="news_list">
+	<?php 
+        $sql = 'SELECT * FROM news ORDER BY id DESC LIMIT 8 ';
+        $req = $bdd->prepare($sql);
+        $req->execute();	
+        while ($result = $req->fetch(PDO::FETCH_OBJ)): ?>
+	<div class="news_list_bloc">
+		<img src="templates/img/news/<?php echo $result->image; ?>.png" class="boxer_list_img"/>
+		<article>
+			<span class="rate_comment">Commentaire (3) | postée <?php echo date("j",strtotime($result->date)).'/'.date("m",strtotime($result->date)).'/'.date("Y",strtotime($result->date)) ?></span>
+			<h2><?php echo $result->titre; ?></h2>
+			<p><?php echo $result->contenu; ?></p>
+			<div class="see"><span class="color_orange"></span><a href="#">Voir le combat<div class="underline bg_orange"></div></a></div>
+		</article>
+	</div>
+    <?php endwhile; ?>
+</div>
