@@ -1,0 +1,9 @@
+<?php
+    $fight = $_GET['fight_id'];
+    $sql = "SELECT * FROM fights WHERE id = ".$fight;
+    $req = $db->prepare($sql);
+    $req->execute();
+    while ($result = $req->fetch(PDO::FETCH_OBJ)){
+        echo $result->boxer_full_name ;
+    }
+?>

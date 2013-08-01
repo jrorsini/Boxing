@@ -2,7 +2,7 @@
 session_start();
 ?>
 <?php 
-require_once 'cnx.php';
+require_once 'config/cnx.php';
 ?>
 <html>
 	<head>

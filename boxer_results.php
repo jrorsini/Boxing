@@ -1,5 +1,5 @@
 <?php 
-require 'cnx.php';
+require 'config/cnx.php';
 if (isset($_GET['motclef'])) {
 	$motclef = $_GET['motclef'];
 	$q = array('motclef'=>$motclef. '%');
@@ -21,7 +21,7 @@ if (isset($_GET['motclef'])) {
 			$ko = $result->boxer_ko*1 .'px';
 			echo '
 				<li>
-					<a href="https://www.google.fr/">
+					<a href="boxer_view.php?boxer_id='.$result->id.'">
 					<img src="templates/img/mini/'.$result->boxer_picture.'"/>
 					'.$result->boxer_full_name.'
 						<div class="ratio_wld">

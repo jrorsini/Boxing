@@ -17,8 +17,10 @@
 				.list_boxer_content{
 					width: 100%;
 					height: 70px;
-					.nc{
-						display: none;
+					.visible_content{
+					.nc{display: none;}
+					.boxer_name{&:before{content:"";font-family: @icon;margin-right: 5px;color: @gold}}
+					.boxer_record{&:before{content:"";font-family: @icon;margin-right: 5px;color: @gold}}
 					}
 				}
 			}

@@ -13,7 +13,7 @@
         $req->execute();	
         while ($result = $req->fetch(PDO::FETCH_OBJ)): ?>
 		<div class="boxer_list_bloc">
-			<a href="#"><div class="see_boxer"></div></a>
+			<a href="boxer_view.php?boxer_id=<?php echo $result->id;?>"><div class="see_boxer"></div></a>
 			<img src="templates/img/list_img/<?php echo $result->boxer_list_picture; ?>_list.png" class="boxer_list_img"/>
 			<div class="list_boxer_content">
 				<div class="visible_content">

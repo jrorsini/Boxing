@@ -2,7 +2,7 @@
 session_start();
 ?>
 <?php 
-require_once 'cnx.php';
+require_once 'config/cnx.php';
 ?>
 <html>
 	<head>
@@ -15,6 +15,5 @@ require_once 'cnx.php';
 		</div>
 		<?php include 'templates/_footer.html';?>
 		<?php include 'templates/footer_sources.html';?>		
-		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	</body>
 </html>

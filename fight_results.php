@@ -1,5 +1,5 @@
 <?php 
-require 'cnx.php';
+require 'config/cnx.php';
 if (isset($_GET['motclef'])) {
 	$motclef = $_GET['motclef'];
 	$q = array('motclef'=>$motclef. '%');
@@ -17,10 +17,10 @@ if (isset($_GET['motclef'])) {
 		while ($result = $req->fetch(PDO::FETCH_OBJ)) {
 			echo '
 				<li>
-					<a href="https://www.google.fr/">
-					<img class="search_img_red" src="templates/img/mini/'.$result->red_corner_img.'"/>
+					<a href="fight_view.php?fight_id='.$result->id.'">
+					<img class="search_img_red" src="templates/img/mini/'.$result->red_corner_img.'.png"/>
 					'.$result->fight_opponent.'
-					<img class="search_img_blue" src="templates/img/mini/'.$result->blue_corner_img.'"/>
+					<img class="search_img_blue" src="templates/img/mini/'.$result->blue_corner_img.'.png"/>
 					</a>
 				</li>
 			';

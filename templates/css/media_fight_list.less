@@ -7,7 +7,7 @@
 			width: 100%;
 			.fight_list_bloc{
 				width: 100%;
-				margin: 0 1% 15% 0;
+				margin: 0 1% 19% 0;
 				img{
 					width: 100%;
 				}
@@ -17,8 +17,46 @@
 				.list_fight_content{
 					width: 100%;
 					height: 70px;
-					.nc{
-						display: none;
+					p{
+						margin-left: 0px;
+					}
+					.arrow_down{
+						bottom: -12px;
+						left: 50%; 
+					}
+					.visible_content{
+						.red_corner_fighter{}
+						.blue_corner_fighter{}
+						.corner_fighter{
+							opacity: 1;
+							.transition;
+							z-index: 0;
+							width: 100%;
+							height: 35px;
+							display: block;
+							p{
+								position: relative;
+								width: 97%;
+								padding-left: 10px;
+								height: 35px;
+								color: #fff;
+								font-family: @orienta;
+								float: left;
+								line-height: 35px;
+							}
+							.red_corner_p{
+								left: 0px;
+								background: rgba(255,36,36,0.4);
+							}
+							.blue_corner_p{
+								left: 0px;
+								background: rgba(36,118,255,0.4);
+							}
+							img{display: none;}
+							.blue_corner_img{
+								right: 0px;
+							}
+						}
 					}
 				}
 			}

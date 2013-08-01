@@ -11,10 +11,9 @@ require_once 'config/cnx.php';
 	<body>
 		<?php include 'templates/_header.html';?>
 		<div class="wrapper">
-			<?php include 'templates/blocks/news_list.html';?>
+			<?php include 'templates/blocks/fight_view.html';?>
 		</div>
 		<?php include 'templates/_footer.html';?>
 		<?php include 'templates/footer_sources.html';?>		
-		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	</body>
 </html>

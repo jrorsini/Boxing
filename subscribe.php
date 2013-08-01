@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require 'cnx.php';
+require 'config/cnx.php';
 
 if (empty($_SESSION['id'])) {
     if(isset($_POST['pseudo']) && isset($_POST['password']) && isset($_POST['email'])){
